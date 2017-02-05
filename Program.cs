@@ -22,18 +22,14 @@ namespace HabrJob
         public string CompanyName { get; set; } = " ";
         public string Meta { get; set; } = " ";
         public string Salary { get; set; } = " ";
-
-
     }
 
 
     class Program
     {
         public static WebClient wClient;
-    
         public static List<HabraJob> jobList;
         public static Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
-
 
         /*public static string GetHtmlString(string html)
         {
