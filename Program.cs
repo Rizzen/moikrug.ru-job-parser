@@ -106,7 +106,7 @@ namespace HabrJob
 
             Console.WriteLine("Request............. " );
 
-            doc.LoadHtml(wClient.DownloadString("https://moikrug.ru/vacancies")); // для теста парсим 16 страницу 
+            doc.LoadHtml(wClient.DownloadString("https://moikrug.ru/vacancies")); 
 
             GetJobInfo (doc);
 
