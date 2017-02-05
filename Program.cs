@@ -9,22 +9,6 @@ using System.Xml.Serialization;
 
 namespace HabrJob
 {
-    public enum Education
-    {
-        None,
-        Higher,
-        IncompleteHigher,
-        SecondaryVocational,
-        Secondary,
-        Pupil
-    }
-
-    public enum Employment
-    {
-        Full,
-        Partial,
-        Freelance
-    }
 
     public class HabraJob
     {
@@ -32,8 +16,6 @@ namespace HabrJob
         {
 
         }
-        private string _habraString;
-        //private string _price = string.Empty;
         public string Url { get; set; } = " ";
         public string Title { get; set; } = " ";
         public string Skills { get; set; } = " ";
@@ -48,8 +30,7 @@ namespace HabrJob
     class Program
     {
         public static WebClient wClient;
-      //  public static WebRequest request;
-        //public static WebResponse response;
+    
         public static List<HabraJob> jobList;
         public static Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
 
