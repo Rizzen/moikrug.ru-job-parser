@@ -45,7 +45,7 @@ namespace HabrJob
 
         public static void SerializeToXml(List<HabraJob> list)
         {
-            //работает
+           
             using (StreamWriter output = new StreamWriter(string.Format("report {0}.xml", System.DateTime.Today.ToString("yyyyMMdd"))))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof (List<HabraJob>));
@@ -55,7 +55,7 @@ namespace HabrJob
         
         public static int GetPagesCount(HtmlDocument htmlDoc)
         {
-            //работает
+           
             HtmlNode node = htmlDoc.DocumentNode.SelectSingleNode("/ html / body / div[4] / div / div / div[6] / a[1]");
             return (int.Parse(node.InnerText) / 25) + 1;
         }
@@ -66,7 +66,7 @@ namespace HabrJob
 
              foreach (var node in list)
               {
-                  //Node <div class="info"
+                  
                   var jobNode = node.FirstChild.ChildNodes.Where(x=>x.Name == "div").ToArray();
 
                   Console.WriteLine("------------  " +jobNode[0].FirstChild.InnerText+"------------------------- \n");
