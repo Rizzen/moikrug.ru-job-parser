@@ -38,12 +38,11 @@ namespace HabrJob
 
              foreach (var node in list)
               {
-                  
-                  var jobNode = node.FirstChild.ChildNodes.Where(x=>x.Name == "div").ToArray();
+                var jobNode = node.FirstChild.ChildNodes.Where(x=>x.Name == "div").ToArray();
 
-                  Console.WriteLine("------------  " +jobNode[0].FirstChild.InnerText+"------------------------- \n");
+                Console.WriteLine("------------  " +jobNode[0].FirstChild.InnerText+"------------------------- \n");
 
-                  int jobNodesCount = jobNode[0].ChildNodes.ToArray().Count();
+                int jobNodesCount = jobNode[0].ChildNodes.ToArray().Count();
                 HabraJob habrJob = new HabraJob();
                 habrJob.Title = jobNode[0].SelectSingleNode("*[@class='title']").InnerText ?? " ";
 
@@ -60,7 +59,6 @@ namespace HabrJob
                 
               }
         }
-
 
 
         static void Main()
@@ -83,7 +81,7 @@ namespace HabrJob
             {
                 Console.WriteLine("Page "+i);
                 doc.LoadHtml(wClient.DownloadString(string.Format("https://moikrug.ru/vacancies?page={0}",i)));
-               GetJobInfo(doc);
+                GetJobInfo(doc);
             }
             
             SerializeToXml(jobList);
