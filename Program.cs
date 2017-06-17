@@ -9,39 +9,11 @@ using System.Xml.Serialization;
 
 namespace HabrJob
 {
-
-    public class HabraJob
-    {
-        public HabraJob()
-        {
-
-        }
-        public string Url { get; set; } = " ";
-        public string Title { get; set; } = " ";
-        public string Skills { get; set; } = " ";
-        public string CompanyName { get; set; } = " ";
-        public string Meta { get; set; } = " ";
-        public string Salary { get; set; } = " ";
-    }
-
-
     class Program
     {
         public static WebClient wClient;
         public static List<HabraJob> jobList;
         public static Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
-
-        /*public static string GetHtmlString(string html)
-        {
-            request = WebRequest.Create(html);
-            response = request.GetResponse();
-            
-            using (StreamReader sReader = new StreamReader (response.GetResponseStream()))
-            {
-                string htmlString = sReader.ReadToEnd();
-                return htmlString; 
-            }
-        }*/
 
         public static void SerializeToXml(List<HabraJob> list)
         {
